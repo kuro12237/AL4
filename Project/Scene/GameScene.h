@@ -1,6 +1,8 @@
 #pragma once
 #include"IScene.h"
-#include"Pch.h"
+#include"WorldTransform.h"
+#include"ViewProjection.h"
+#include"GameObject/Player/Player.h"
 
 class GameScene :public IScene
 {
@@ -17,6 +19,7 @@ public:
 	void Flont2dSpriteDraw()override;
 private:
 	
+	ViewProjection viewProjection_{};
 	
-	
+	unique_ptr<Player>player_ = nullptr;
 };

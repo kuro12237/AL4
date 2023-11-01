@@ -130,6 +130,12 @@
     <Filter Include="Project\GameObject">
       <UniqueIdentifier>{e6c962cd-fcc4-4e45-9870-1c278152fe09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\GameObject\Player">
+      <UniqueIdentifier>{b45cd1b1-1a29-45f9-a630-928251224b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\GameObject\Player\Bullet">
+      <UniqueIdentifier>{b202e237-9bfa-4a76-9014-6ccb6f84b9f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="CLEYERA\Config\.editorconfig">
@@ -275,6 +281,12 @@
     </ClCompile>
     <ClCompile Include="Project\Scene\GameScene.cpp">
       <Filter>Project\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Player\Player.cpp">
+      <Filter>Project\GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Player\PlayerBullet.cpp">
+      <Filter>Project\GameObject\Player\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -454,6 +466,12 @@
     </ClInclude>
     <ClInclude Include="Project\Scene\GameScene.h">
       <Filter>Project\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Player\Player.h">
+      <Filter>Project\GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Player\PlayerBullet.h">
+      <Filter>Project\GameObject\Player\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
