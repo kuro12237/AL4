@@ -18,10 +18,7 @@ void Player::Update()
 {
 	keyControl();
 	Attack();
-	for (shared_ptr<PlayerBullet>& bullet : bullets_)
-	{
-		bullet->Update();
-	}
+	BulletsUpdate();
 
 	worldTransform_.UpdateMatrix();
 	lineWorldTransform_.UpdateMatrix();
@@ -42,8 +39,12 @@ void Player::Attack()
 {
 	if (Input::GetInstance()->PushKeyPressed(DIK_SPACE))
 	{
+		const float kbulletSpeed = 1.0f;
+		Vector3 velocity = { 0,0,kbulletSpeed };
+		velocity = VectorTransform::TransformNormal(velocity, worldTransform_.matWorld);
+
 		shared_ptr<PlayerBullet>bullet = make_shared<PlayerBullet>();
-		bullet->Initialize(worldTransform_.translate, { 0,0,1 });
+		bullet->Initialize(worldTransform_.translate, velocity);
 		bullets_.push_back(bullet);
 	}
 }
@@ -76,4 +77,20 @@ void Player::keyControl()
 		worldTransform_.rotation.y -= kPlayerSpeed_;
 	}
 
+}
+
+void Player::BulletsUpdate()
+{
+	bullets_.remove_if([](shared_ptr<PlayerBullet> bullet) {
+		if (bullet->IsDead()) {
+			bullet.reset();
+			return true;
+		}
+		return false;
+		});
+
+	for (shared_ptr<PlayerBullet>& bullet : bullets_)
+	{
+		bullet->Update();
+	}
 }

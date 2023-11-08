@@ -2,6 +2,8 @@
 #include"Model.h"
 #include"Input.h"
 #include"GameObject/Player/PlayerBullet.h"
+#include"VectorTransform.h"
+#include"MatrixTransform.h"
 
 class Player {
 public:
@@ -20,12 +22,15 @@ private:
 
 	void keyControl();
 
+	void BulletsUpdate();
+
 	Vector3 position_ = {};
 	uint32_t texHandle_ = 0;
 	unique_ptr<Model> model_ = nullptr;
 	unique_ptr<Model> lineModel_ = nullptr;
 
 	WorldTransform worldTransform_{};
+	WorldTransform ReticleWorldTransform_{};
 	WorldTransform lineWorldTransform_{};
 	
 	const float kPlayerSpeed_ = 0.05f;

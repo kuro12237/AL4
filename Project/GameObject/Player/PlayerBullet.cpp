@@ -18,7 +18,10 @@ void PlayerBullet::Update()
 	{
 		isDead_ = true;
 	}
-	worldTransform_.translate.z += 0.1f;
+	velocity_ = VectorTransform::Normalize(velocity_);
+	velocity_ = VectorTransform::Multiply(velocity_, 0.4f);
+
+	worldTransform_.translate = VectorTransform::Add(worldTransform_.translate, velocity_);
 	worldTransform_.UpdateMatrix();
 }
 

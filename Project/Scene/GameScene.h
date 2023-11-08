@@ -3,6 +3,7 @@
 #include"WorldTransform.h"
 #include"ViewProjection.h"
 #include"GameObject/Player/Player.h"
+#include"GameObject/Enemy/Enemy.h"
 
 class GameScene :public IScene
 {
@@ -22,4 +23,6 @@ private:
 	ViewProjection viewProjection_{};
 	
 	unique_ptr<Player>player_ = nullptr;
+	list<shared_ptr<Enemy>>enemys_ = {};
+
 };
