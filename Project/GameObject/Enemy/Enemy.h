@@ -2,6 +2,14 @@
 #include"Model.h"
 #include"state/EnemyApprochState.h"
 #include"state/EnemyLeaveState.h"
+#include"state/EnemyWaiteState.h"
+#include"GameObject/Enemy/Bullet/EnemyBullet.h"
+
+enum EnemyState
+{
+	WAITE,
+	MOVE
+};
 
 class Enemy
 {
@@ -9,7 +17,7 @@ public:
 	Enemy() {};
 	~Enemy() {};
 
-	void Initialize();
+	void Initialize(EnemyState s,Vector3 t);
 
 	void Update();
 	
@@ -29,10 +37,15 @@ public:
 
 private:
 
+	void Attack();
+
 	unique_ptr<Model>model_ = nullptr;
 	WorldTransform worldTransform_{};
 	uint32_t TexHandle_ = 0;
 
 	IEnemyState* state_ = nullptr;
+	list<shared_ptr<EnemyBullet>>bullets_ = {};
+
+	uint32_t bulletTimer = 0;
 
 };

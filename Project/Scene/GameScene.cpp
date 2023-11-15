@@ -8,9 +8,15 @@ void GameScene::Initialize()
 
 	player_ = make_unique<Player>();
 	player_->Initialize();
+	
 	shared_ptr<Enemy>e1 = make_shared<Enemy>();
-	e1->Initialize();
+	e1->Initialize(WAITE,{0,0,20});
 	enemys_.push_back(e1);
+
+
+
+	skyDome_ = make_unique<SkyDome>();
+	skyDome_->initialize();
 
 }
 
@@ -23,6 +29,7 @@ void GameScene::Update(GameManager* Scene)
 	{
 		enemy->Update();
 	}
+	skyDome_->Update();
 	viewProjection_.UpdateMatrix();
 }
 
@@ -38,6 +45,9 @@ void GameScene::Object3dDraw()
 	{
 		enemy->Draw(viewProjection_);
 	}
+
+	skyDome_->Draw(viewProjection_);
+
 }
 
 void GameScene::Flont2dSpriteDraw()

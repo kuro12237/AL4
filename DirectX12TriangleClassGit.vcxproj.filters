@@ -142,6 +142,12 @@
     <Filter Include="Project\GameObject\Enemy\state">
       <UniqueIdentifier>{9b8f2443-0770-4cd4-a7a0-730235782ec4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project\GameObject\SkyDome">
+      <UniqueIdentifier>{de373351-7b1c-4483-9d5c-233b46d2484f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\GameObject\Enemy\Bullet">
+      <UniqueIdentifier>{478f0f14-8c45-4038-8977-6367c2a600c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="CLEYERA\Config\.editorconfig">
@@ -303,6 +309,9 @@
     <ClCompile Include="Project\GameObject\Enemy\state\EnemyApprochState.cpp">
       <Filter>Project\GameObject\Enemy\state</Filter>
     </ClCompile>
+    <ClCompile Include="Project\GameObject\SkyDome\SkyDome.cpp" />
+    <ClCompile Include="Project\GameObject\Enemy\state\EnemyWaiteState.cpp" />
+    <ClCompile Include="Project\GameObject\Enemy\Bullet\EnemyBullet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CLEYERA\Utility\Pch\Pch.h">
@@ -500,6 +509,13 @@
     <ClInclude Include="Project\GameObject\Enemy\state\IEnemyState.h">
       <Filter>Project\GameObject\Enemy\state</Filter>
     </ClInclude>
+    <ClInclude Include="Project\GameObject\SkyDome\SkyDome.h">
+      <Filter>Project\GameObject\SkyDome</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\state\EnemyWaiteState.h">
+      <Filter>Project\GameObject\Enemy\state</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\Bullet\EnemyBullet.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Resources\Shader\ShapeObject3d.PS.hlsl">

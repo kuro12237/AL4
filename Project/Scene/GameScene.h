@@ -4,6 +4,7 @@
 #include"ViewProjection.h"
 #include"GameObject/Player/Player.h"
 #include"GameObject/Enemy/Enemy.h"
+#include"GameObject/SkyDome/SkyDome.h"
 
 class GameScene :public IScene
 {
@@ -24,5 +25,6 @@ private:
 	
 	unique_ptr<Player>player_ = nullptr;
 	list<shared_ptr<Enemy>>enemys_ = {};
+	unique_ptr<SkyDome>skyDome_ = nullptr;
 
 };
